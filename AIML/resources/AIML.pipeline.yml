@@ -1,0 +1,13 @@
+# The main pipeline for AIML
+resources:
+  pipelines:
+    AIML_pipeline:
+      name: AIML_pipeline
+      catalog: workspace
+      schema: AIML_${bundle.target}
+      libraries:
+        - notebook:
+            path: ../src/dlt_pipeline.ipynb
+
+      configuration:
+        bundle.sourcePath: ${workspace.file_path}/src
